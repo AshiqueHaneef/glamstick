@@ -2,30 +2,69 @@
 import Footer from "@/components/footer";
 import NavbarModel from "@/components/navbar";
 import { NextUIProvider } from "@nextui-org/react";
-import Image from "next/image";
-import ceo from "/public/ceo.jpeg";
+import blog1 from "/public/blogDemo.jpg";
+import WiderBlog from "@/components/wider-blog";
+import BlogCard from "@/components/blog-card";
 
 export default function Home() {
   return (
     <NextUIProvider>
-      <main className="flex min-h-screen flex-col items-center justify-between ">
-        <NavbarModel />
-        <div className=" text-4xl mx-8 text-center py-8">Glamstic blog site under construction</div>
-        <div className=" text-3xl mx-16">
-          <p className=" text-base font-mono max-w-screen-md">
-            Introducing the visionary behind it all – our esteemed founder, a
-            trailblazer who has shaped our journey with passion and purpose.
-            Meet the driving force behind Glamstick, a visionary leader whose
-            dedication and innovation have been instrumental in bringing our
-            dreams to life. Get to know the architect of our success, as we
-            proudly introduce the heart and soul of our organization
-          </p>
-          <div className=" text-center py-8">SHANA PA</div>
-          <div className="flex flex-row justify-center ">
-            <Image alt="founder" src={ceo} height={500} />
-          </div>
+      <main className="flex min-h-screen  flex-col items-center justify-between ">
+        <div className="container mx-auto  py-8 px-6 lg:px-0">
+          {" "}
+          {/* Container with padding and margin */}
+          <header className="flex justify-between items-center">
+            <NavbarModel />
+          </header>
+          <main>
+            <section className="hero text-center py-16">
+              <h2 className="text-4xl font-bold mb-4">Best for Lip Care!!</h2>
+              <p className="text-gray-700 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </section>
+
+            <section className=" my-8">
+              <WiderBlog
+                linkText="view"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat."
+                imageSrc={blog1}
+                title="Lorem ipsum"
+              />
+            </section>
+
+            <section>
+              <BlogCard />
+            </section>
+            <section className="info text-center py-16">
+              <h2>What is Lorem Ipsum?</h2>
+              <p className="text-gray-700 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="#" className="text-blue-500 hover:underline">
+                Read more
+              </a>
+            </section>
+          </main>
+          <Footer />
         </div>
-        <Footer />
       </main>
     </NextUIProvider>
   );
